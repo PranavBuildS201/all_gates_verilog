@@ -1,73 +1,67 @@
-# All Logic Gates in Verilog HDL
+# Verilog Digital Logic Practice
 
-A beginner-friendly digital design project that implements the seven fundamental logic gates using **gate-level modeling in Verilog HDL** and verifies them with a simple testbench.
+A hands-on collection of beginner digital-design exercises written in **Verilog HDL**. This repository contains basic logic gates, combinational circuits, and testbenches for simulation in Xilinx Vivado or another Verilog simulator.
 
-## Overview
+## Projects
 
-This project demonstrates how basic logic gates behave for binary inputs. The design uses Verilog's built-in gate primitives and a testbench that applies all four possible combinations of the two inputs.
+| Circuit | Modeling style | Design file | Testbench |
+|---|---|---|---|
+| Seven basic logic gates | Gate-level | [all_gates_gatelevel.v](all_gates_gatelevel.v) | [tb_all_gates_gatelevel.v.txt](tb_all_gates_gatelevel.v.txt) |
+| 2-to-1 Multiplexer | Dataflow (ternary operator) | [rtl/mux_2to1.v](rtl/mux_2to1.v) | [testbench/tb_mux_2to1.v](testbench/tb_mux_2to1.v) |
+| 1-to-4 Demultiplexer | Procedural combinational | [rtl/demux_1to4.v](rtl/demux_1to4.v) | [testbench/tb_demux_1to4.v](testbench/tb_demux_1to4.v) |
+| Half Adder | Gate-level | [rtl/half_adder.v](rtl/half_adder.v) | [testbench/tb_half_adder.v](testbench/tb_half_adder.v) |
+| Full Adder | Dataflow | [rtl/full_adder.v](rtl/full_adder.v) | [testbench/tb_full_adder.v](testbench/tb_full_adder.v) |
+| 2-to-4 Decoder | Dataflow | [rtl/decoder_2to4.v](rtl/decoder_2to4.v) | [testbench/tb_decoder_2to4.v](testbench/tb_decoder_2to4.v) |
 
-## Gates Implemented
+## Repository Structure
 
-- AND
-- OR
-- NOT
-- NAND
-- NOR
-- XOR
-- XNOR
+```text
+all_gates_verilog/
+├── all_gates_gatelevel.v
+├── tb_all_gates_gatelevel.v.txt
+├── image.png
+├── rtl/
+│   ├── mux_2to1.v
+│   ├── demux_1to4.v
+│   ├── half_adder.v
+│   ├── full_adder.v
+│   └── decoder_2to4.v
+└── testbench/
+    ├── tb_mux_2to1.v
+    ├── tb_demux_1to4.v
+    ├── tb_half_adder.v
+    ├── tb_full_adder.v
+    └── tb_decoder_2to4.v
+```
 
-## Repository Contents
+## How to Run a Simulation
 
-| File | Description |
-|---|---|
-| [`all_gates_gatelevel.v`](all_gates_gatelevel.v) | Verilog module implementing all seven logic gates |
-| [`tb_all_gates_gatelevel.v.txt`](tb_all_gates_gatelevel.v.txt) | Testbench that applies all four input combinations |
-| [`image.png`](image.png) | Project image |
+1. Open **Xilinx Vivado** and create or open a project.
+2. Add the required design file from the `rtl/` folder (or the root folder for the logic-gates example) as a **Design Source**.
+3. Add its matching testbench from `testbench/` as a **Simulation Source**.
+4. Set the testbench module as the simulation top, for example `tb_full_adder`.
+5. Run **Run Simulation → Run Behavioral Simulation**.
+6. Inspect the waveform and compare the outputs with the expected truth table.
 
-> **Note:** The testbench file currently has a `.txt` extension. If your simulator requires a Verilog source extension, rename it to `tb_all_gates_gatelevel.v` before adding it as a simulation source.
+Run one testbench at a time while learning. The testbenches apply input combinations with delays and print signal values using `$monitor`.
 
-## Logic Table
-
-The NOT gate operates on input `a`; all other gates use inputs `a` and `b`.
-
-| a | b | AND | OR | NOT a | NAND | NOR | XOR | XNOR |
-|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 0 | 0 | 0 | 0 | 1 | 1 | 1 | 0 | 1 |
-| 0 | 1 | 0 | 1 | 1 | 1 | 0 | 1 | 0 |
-| 1 | 0 | 0 | 1 | 0 | 1 | 0 | 1 | 0 |
-| 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 1 |
-
-## How to Simulate
-
-You can simulate this project in **Xilinx Vivado** or another Verilog simulator.
-
-1. Clone or download this repository.
-2. Create or open a Verilog project in your simulator.
-3. Add `all_gates_gatelevel.v` as a design source.
-4. Add the testbench file as a simulation source. If needed, rename its extension from `.txt` to `.v`.
-5. Set `tb_all_gates` as the simulation top module.
-6. Run behavioral simulation and inspect the waveform for all four input combinations.
-
-The testbench holds each input combination for 10 time units before moving to the next combination, then ends the simulation.
+> **Note:** The original all-gates testbench is stored as `tb_all_gates_gatelevel.v.txt`. If Vivado does not recognize it as Verilog, rename the file to `tb_all_gates_gatelevel.v` before adding it as a simulation source.
 
 ## Concepts Practiced
 
-- Verilog module declarations and port connections
-- Gate-level modeling using built-in primitives
-- Testbench creation and DUT instantiation
-- Applying input stimulus and observing output waveforms
-- Comparing simulated outputs with a truth table
+- Gate-level, dataflow, and procedural combinational modeling
+- Verilog modules, ports, operators, and built-in gate primitives
+- Multiplexers, demultiplexers, decoders, and arithmetic circuits
+- Testbench creation, DUT instantiation, input stimulus, and waveform checking
 
-## Learning Goal
+## Learning Roadmap
 
-This project is part of my hands-on practice in digital logic design and Verilog HDL, building a foundation for more advanced combinational circuits and RTL design.
+These examples are a foundation for further practice with encoders, comparators, 4-bit adders, and sequential circuits such as counters and registers.
 
 ## Author
 
-**Pranav Shinde**
-
-- GitHub: [@PranavBuildS201](https://github.com/PranavBuildS201)
+**Pranav Shinde** · [GitHub Profile](https://github.com/PranavBuildS201)
 
 ---
 
-If you find this project useful for learning basic Verilog logic gates, feel free to explore the source code and experiment with the testbench.
+This repository is a learning portfolio. Contributions and suggestions that help improve the examples are welcome.
