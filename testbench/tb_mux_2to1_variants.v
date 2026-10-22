@@ -1,10 +1,14 @@
 `timescale 1ns/1ps
 module tb_mux_2to1_variants;
-    reg [1:0] I; reg S;
+    reg [1:0] I;
+    reg S;
     wire Y_gate, Y_behavioral, Y_existing;
+
     mux_2to1_gatelevel g(.I(I),.S(S),.Y(Y_gate));
     mux_2to1_behavioral b(.I(I),.S(S),.Y(Y_behavioral));
-    mux_2to1 existing(.i(I),.s(S),.y(Y_existing));
+    // Existing dataflow module uses separate a/b inputs.
+    mux_2to1 existing(.a(I[0]),.b(I[1]),.sel(S),.y(Y_existing));
+
     integer k;
     initial begin
         for(k=0;k<8;k=k+1) begin
