@@ -1,11 +1,7 @@
 # Circuit diagrams
 
-This folder contains compact circuit/logic illustrations for the RTL examples. The Verilog source is the authoritative implementation. For synthesis-quality schematics, generate the schematic in Vivado after elaboration or synthesis and replace/add the exported screenshot here.
+![NOR SR latch feedback circuit](sr_latch_nor.svg)
 
-## Quick circuit map
+The SVG illustrates the cross-coupled NOR feedback principle used to store one bit. It is a conceptual learning diagram, not a Vivado-generated netlist schematic.
 
-- **Combinational:** inputs → logic network → outputs; no stored state.
-- **SR latch:** two cross-coupled NOR gates; feedback stores one bit.
-- **D latch:** enable-controlled storage; transparent while enable is high.
-- **D flip-flop:** captures D on the rising edge of clk.
-- **JK flip-flop:** captures hold/reset/set/toggle behavior on the rising clock edge.
+For other designs, open the RTL in Vivado and use **Open Elaborated Design → Schematic** (or the synthesized schematic) to capture the implementation. Add exported images here with descriptive filenames.
