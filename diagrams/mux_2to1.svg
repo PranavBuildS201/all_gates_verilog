@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="300" viewBox="0 0 820 300">
+<rect width="820" height="300" fill="#fff"/>
+<text x="410" y="30" text-anchor="middle" font-family="Arial" font-size="22" font-weight="bold" fill="#111827">2-to-1 Multiplexer (MUX)</text>
+<path d="M300 75 L460 95 L460 205 L300 225 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+<g stroke="#374151" stroke-width="3" fill="none"><path d="M80 100 H300"/><path d="M80 190 H300"/><path d="M460 150 H650"/><path d="M380 260 V225"/></g>
+<g font-family="Arial" font-size="18" fill="#111827"><text x="45" y="106">I[0]</text><text x="45" y="196">I[1]</text><text x="665" y="156">Y</text><text x="390" y="283">S</text><text x="380" y="150" text-anchor="middle" font-size="20">MUX</text></g>
+<text x="410" y="55" text-anchor="middle" font-family="Arial" font-size="14" fill="#4b5563">S=0 selects I[0]; S=1 selects I[1]</text>
+</svg>
